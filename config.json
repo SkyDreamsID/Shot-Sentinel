@@ -1,0 +1,42 @@
+{
+    "filename_format": "[{camera}]{date}_{time}_{index}",
+    "use_phone_model": true,
+    "unknown_camera_name": "CAM",
+    "max_camera_length": 10,
+    "supported_image_extensions": [
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".nef",
+        ".cr2",
+        ".cr3",
+        ".arw",
+        ".raf",
+        ".orf",
+        ".rw2",
+        ".dng"
+    ],
+    "supported_video_extensions": [
+        ".mp4",
+        ".mov",
+        ".avi",
+        ".mts",
+        ".m2ts",
+        ".mxf"
+    ],
+    "brand_keywords": [
+        "NIKON",
+        "SONY",
+        "CANON",
+        "OLYMPUS",
+        "FUJIFILM",
+        "PANASONIC",
+        "LEICA",
+        "PENTAX",
+        "HASSELBLAD"
+    ],
+    "camera_aliases": {
+        "NIKOND3300": "D3300",
+        "NIKOND3100": "D3100"
+    }
+}
