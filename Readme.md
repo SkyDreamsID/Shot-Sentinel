@@ -2,6 +2,7 @@
 
 [![Download](https://img.shields.io/github/v/release/SkyDreamsID/Shot-Sentinel?include_prereleases&label=Download)](https://github.com/SkyDreamsID/Shot-Sentinel/releases/latest)
 
+
 > Never lose your memories because your camera decided to start from DSC_0001 again.
 
 ![Version](https://img.shields.io/badge/version-v0.7a--alpha-orange)
@@ -274,13 +275,23 @@ Status:
 
 ### ❓ Alasan Bikin Ini
 
-Saya pernah kehilangan beberapa foto berharga di HDD saat memindahkan file dari kamera ke laptop. Ternyata kamera saya reset urutan penomoran file, jadi beberapa foto lama ketimpa tanpa saya sadari. (tools ini useless jika anda tidak menaruh semua foto di satu folder)
+Saya pernah kehilangan beberapa foto berharga di HDD saat memindahkan file dari kamera ke laptop. Penomoran nama file kamera suka reset balik ke nol setiap kali ganti kartu memori atau move file (ctrl + v) ke laptop, jadi beberapa foto lama ketimpa tanpa saya sadari. Parah sih, foto-foto bagus jadi ilang begitu aja :v.
 
-### ❤️ Tentang Project Ini
+Setelah beberapa kali kena masalah yang sama, akhirnya muak juga. Jadinya cari cara buat solve problem ini sendiri. Dari frustasi jadi tools yang hopefully bisa bantu orang lain yang punya masalah serupa. (tools ini useless jika anda tidak menaruh semua foto di satu folder)
+
+kayak gini casenya
+```text
+"DSC_0001.NEF" bakal ketimpa apabila penomoran di kamera sudah maximal di "DSC_9999.NEF" yang mana otomatis balik lagi jadi "DSC_0001.NEF" dan menyebabkan file hilang tertimpa apabila ditaruh di folder yang sama
+```
+
+### Tentang Project Ini
 
 Shot Sentinel ada karena saya pernah kehilangan beberapa foto berharga. Kamera saya reset nomor file, jadinya nama file sama dan yang lama tertimpa. Sejak pengalaman itu, saya mulai mikir perlu ada tool sederhana untuk handle masalah ini.
 
-Setiap fitur dan keputusan di project ini didasarkan pada pengalaman nyata mengelola foto dari berbagai kamera. Bukan dimaksudkan sebagai pengganti software DAM profesional seperti Lightroom atau Capture One. Shot Sentinel hanya fokus pada satu hal: mencegah file tertimpa karena nama kamera yang sama.
+Setiap fitur dan keputusan di project ini didasarkan pada pengalaman nyata mengelola foto dari berbagai kamera.
+
+Fokusnya cuma satu: cegah file media tertimpa karena nama kamera yang sama. Tools ini berguna kalau lu punya masalah yang sama. 
+Kalau gak punya masalah ini, ya probably useless sih :v
 
 ### 🤖 Kredit Pengembangan
 
@@ -290,13 +301,13 @@ Rifki Eka Putra
 
 **Kontribusi Saya**
 
-Konsep, problem definition, design fitur, naming convention, edge case testing, algoritma, dan arah project semuanya ditangani oleh saya.
+Konsep, problem definition, design fitur, naming convention, edge case testing, algoritma, arah project dan scroll fesnuk :v
 
 **AI Assistants**
 
 ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Antigravity
 
-Digunakan untuk membantu code generation, debugging, dokumentasi, dan refactoring suggestions. Semua keputusan dan arah project tetap ditentukan oleh saya.
+Digunakan untuk membantu code generation, debugging, dokumentasi, dan refactoring suggestions. Semua keputusan dan arah project tetap saya yang menentukan.
 
 </details>
 
@@ -514,6 +525,6 @@ Used to help with code generation, debugging, documentation, and refactoring sug
 
 ---
 
-# Made with ❤️ and Python by **Rifki Eka Putra (rifkiekap07)**
+# Made with ❤️ and Python by **rifkiekap07**
 
 © June 2026 Rifki Eka Putra
