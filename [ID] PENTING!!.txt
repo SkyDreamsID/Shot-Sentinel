@@ -5,11 +5,10 @@ Cara pakai
 4. Pilih opsi
 5. udah berhasil gitu aja :v
 
-6. Kalau mau uninstall tinggal klik uninstaller (uninstaller-program.bat)
-7. Beres
+Kalau mau uninstall tinggal klik uninstaller (uninstaller-program.bat) beres, aman gak ninggalin registry
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Alasan bikin ini karena hasil motret saya banyak yang kehapus/overwrite foto baru gara-gara penamaan kamera :v
+Alasan bikin ini karena hasil motret saya banyak yang kehapus/overwrite foto baru gara-gara penamaan kamera, saking banyaknya foto yang kehapus sampe muak sendiri gw :v.
 Buat yang nanya kenapa kok fotonya gak dipisah/sortir, jawabannya simpel yaitu karena saya MALAS dan SUKA LUPA :v hehehe
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
