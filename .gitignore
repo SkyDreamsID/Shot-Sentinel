@@ -1,0 +1,8 @@
+__pychace__/
+*.pyc
+
+log/*
+!log/.gitkeep
+
+master_history.txt
+process_log.txt

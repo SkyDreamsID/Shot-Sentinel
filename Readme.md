@@ -5,7 +5,7 @@
 ![Version](https://img.shields.io/badge/version-v0.7a--alpha-orange)
 ![Platform](https://img.shields.io/badge/platform-Windows-blue)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-green)
-![License](https://img.shields.io/badge/license-Unlicensed-lightgrey)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ### 📥 Installation & Setup
 
