@@ -1,5 +1,7 @@
 # 🛡️ Shot Sentinel
 
+[![Download](https://img.shields.io/github/v/release/SkyDreamsID/Shot-Sentinel?include_prereleases&label=Download)](https://github.com/SkyDreamsID/Shot-Sentinel/releases/latest)
+
 > Never lose your memories because your camera decided to start from DSC_0001 again.
 
 ![Version](https://img.shields.io/badge/version-v0.7a--alpha-orange)
