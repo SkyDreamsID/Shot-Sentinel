@@ -1,11 +1,12 @@
 Cara pakai
-1. klik installer (install-program.bat)
+1. klik installer (Install-Program.bat)
 2. buka folder/pilih foto yang mau di rename lalu klik kanan
 3. Cari bagian SendTo/Bagikan Ke -> Shot Sentinel
 4. Pilih opsi
 5. udah berhasil gitu aja :v
 
-Kalau mau uninstall tinggal klik uninstaller (uninstaller-program.bat) beres, aman gak ninggalin registry
+6. Kalau mau uninstall tinggal klik uninstaller (Uninstall-Program.bat)
+7. Beres
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Alasan bikin ini karena hasil motret saya banyak yang kehapus/overwrite foto baru gara-gara penamaan kamera, saking banyaknya foto yang kehapus sampe muak sendiri gw :v.

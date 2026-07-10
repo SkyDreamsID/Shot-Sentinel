@@ -1,0 +1,22 @@
+Mengapa Shot Sentinel dibuat:
+  Dibuat karena frustrasi kehilangan foto berharga akibat
+  file Explorer tertimpa oleh nama file bawaan kamera.
+
+Motivasi:
+  Membangun mesin penamaan ulang media yang cepat dan offline
+  untuk melindungi kenangan dengan memulihkan keadaan aslinya.
+
+Pelajaran:
+  Tuning regex bisa rumit, single-pass EXIF mengurangi IO 50%,
+  dan UX CLI membutuhkan alur kerja yang sangat jelas.
+
+Keputusan Desain (SendTo vs Registry):
+  Awalnya menggunakan Registry Windows, namun mengalami bug multi-proses
+  (Windows membuka terminal terpisah untuk setiap file yang terpilih).
+  Terinspirasi dari KDE Connect, Akhirnya dipindahkan ke menu SendTo (shell:sendto)
+  sehingga Windows mengelompokkan semua file terpilih ke satu jendela CLI.
+
+Rencana Masa Depan:
+  - Dashboard analitik HTML dan grafik statistik
+  - Deteksi foto duplikat menggunakan hashing
+  - Mode monitoring direktori / daemon mode

@@ -1,0 +1,22 @@
+Why Shot Sentinel was created:
+  Created out of frustration from losing precious photos due to
+  accidental Explorer overwrites of camera-default filenames.
+
+Motivation:
+  To build an ultra-fast, offline media renaming engine that protects
+  memories by restoring the original state seamlessly.
+
+Lessons Learned:
+  Regex tuning can be tricky, single-pass EXIF reads cut IO by half,
+  and CLI user experiences require extremely clear workflows.
+
+Design Decision (SendTo vs Registry):
+  Originally tried Windows Registry, but hit a multi-process bug
+  (Windows spawned separate terminal windows for every selected file).
+  Inspired by KDE Connect, switched to using the SendTo folder (shell:sendto)
+  which groups all selected files into a single running CLI instance.
+
+Future Ideas:
+  - HTML analytics dashboard and graph statistics
+  - Duplicate photo detection using hashing
+  - Directory monitoring / daemon mode

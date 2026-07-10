@@ -5,10 +5,10 @@
 
 > Never lose your memories because your camera decided to start from DSC_0001 again.
 
-![Version](https://img.shields.io/badge/version-v0.7a--alpha-orange)
+![Version](https://img.shields.io/badge/version-v0.8--beta-orange)
 ![Platform](https://img.shields.io/badge/platform-Windows-blue)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-green)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-Non--Commercial-red)
 
 ### 📥 Installation & Setup
 
@@ -108,11 +108,15 @@ Shot Sentinel dibuat untuk mengatasi masalah tersebut dengan merubah nama file m
 
 - 📸 Rename otomatis berdasarkan EXIF
 - 🎥 Mendukung foto dan video
-- 🛡️ Mencegah file tertimpa (overwrite)
+- 🛡️ Mencegah file tertimpa (overwrite) & Cek duplikat otomatis
 - 🔄 Restore ke nama file asli
-- 📝 Session log
-- 📋 Process log
-- ⚙️ Bisa dikonfigurasi lewat `config.json`
+- 🏷️ Camera Alias (Ubah nama model kamera bawaan)
+- 👤 Username Alias (Gunakan nama Anda untuk nama file)
+- ❓ Unknown Camera Alias (Tangani metadata yang hilang)
+- 👁️ Dynamic Preview (Lihat hasil nama sebelum rename)
+- 📝 History log & Export CSV
+- ⚙️ Pengaturan di dalam CLI (Settings & Fitur Tambahan)
+- 🎮 Developer Corner (Animasi, ASCII, Quotes, dll)
 
 ### 📷 Format Penamaan
 
@@ -146,19 +150,28 @@ DSC_1236.JPG
 [D3300]2026-06-28_12-35-45_1236.JPG
 ```
 
+### 🏷️ Camera Alias Manager
+
+Fitur baru di v0.8! Jika nama model kamera dari EXIF terlalu panjang atau kurang rapi (contoh: `NIKOND3300`, `CANONEOSRP`), kamu bisa membuat alias agar namanya lebih bagus di hasil akhir (contoh: `D3300`, `EOS RP`).
+Dapat diakses langsung dari menu utama.
+
 ### 🗂️ Struktur Project
 
 ```text
 Shot-Sentinel/
-├── log/
+├── config/
+│   ├── config.json
+│   └── camera_alias.json
+├── history/
+│   ├── master_history.json
+│   └── process_log.txt
+├── logic/
+├── assets/
 ├── Sample/
 ├── Step by step/
-├── [ID] Read this!!.txt
-├── config.json
+├── [ID] PENTING!!.txt
 ├── Install-Program.bat
 ├── main.py
-├── master_history.txt
-├── process_log.txt
 ├── program.bat
 ├── Readme.md
 ├── requirements.txt
@@ -266,12 +279,11 @@ Status:
 
 ### 🛣️ Roadmap
 
-**v0.7b**
-- Dukungan Linux
-- Pengorganisasian folder
-- Pengecekan duplikat
-- Export CSV
-- Peningkatan performa
+**v1.0**
+- Dukungan Linux penuh
+- Pengorganisasian folder otomatis (Folder Organizer)
+- GUI Desktop Version
+- Peningkatan performa lanjutan
 
 ### ❓ Alasan Bikin Ini
 
@@ -297,7 +309,7 @@ Kalau gak punya masalah ini, ya probably useless sih :v
 
 **Penulis dan Developer**
 
-Rifki Eka Putra
+Rifki Eka Putra (SkyDreamsID)
 
 **Kontribusi Saya**
 
@@ -330,11 +342,15 @@ Shot Sentinel was built to solve this by renaming files into unique filenames ba
 
 - 📸 Automatic renaming based on EXIF data
 - 🎥 Supports both photos and videos
-- 🛡️ Prevents file overwrites
+- 🛡️ Prevents file overwrites & Automatic duplicate checking
 - 🔄 Restore to original filename
-- 📝 Session log
-- 📋 Process log
-- ⚙️ Configurable via `config.json`
+- 🏷️ Camera Alias (Change default camera model names)
+- 👤 Username Alias (Use your name for filenames)
+- ❓ Unknown Camera Alias (Handle missing metadata)
+- 👁️ Dynamic Preview (See results before renaming)
+- 📝 History log & CSV Export
+- ⚙️ Built-in CLI Settings & Additional Features
+- 🎮 Developer Corner (Animation, ASCII Art, Quotes, etc.)
 
 ### 📷 Naming Format
 
@@ -368,19 +384,28 @@ DSC_1236.JPG
 [D3300]2026-06-28_12-35-45_1236.JPG
 ```
 
+### 🏷️ Camera Alias Manager
+
+New in v0.8! If the camera model name from EXIF is too long or messy (e.g., `NIKOND3300`, `CANONEOSRP`), you can create an alias for a cleaner filename (e.g., `D3300`, `EOS RP`).
+Accessible directly from the main menu.
+
 ### 🗂️ Project Structure
 
 ```text
 Shot-Sentinel/
-├── log/
+├── config/
+│   ├── config.json
+│   └── camera_alias.json
+├── history/
+│   ├── master_history.json
+│   └── process_log.txt
+├── logic/
+├── assets/
 ├── Sample/
 ├── Step by step/
-├── [ID] Read this!!.txt
-├── config.json
+├── [ID] PENTING!!.txt
 ├── Install-Program.bat
 ├── main.py
-├── master_history.txt
-├── process_log.txt
 ├── program.bat
 ├── Readme.md
 ├── requirements.txt
@@ -488,12 +513,11 @@ Status:
 
 ### 🛣️ Roadmap
 
-**v0.7b**
-- Linux support
-- Folder organization
-- Duplicate checker
-- CSV export
-- Performance improvements
+**v1.0**
+- Full Linux support
+- Automatic folder organization
+- GUI Desktop Version
+- Advanced performance improvements
 
 ### ❓ Why I Made This
 
@@ -509,7 +533,7 @@ Every feature and decision in this project is based on real experience managing 
 
 **Author and Developer**
 
-Rifki Eka Putra
+Rifki Eka Putra (SkyDreamsID)
 
 **My Contributions**
 
@@ -525,6 +549,6 @@ Used to help with code generation, debugging, documentation, and refactoring sug
 
 ---
 
-# Made with ❤️ and Python by **rifkiekap07**
+# Made with ❤️ and Python by **Rifki Eka Putra (SkyDreamsID)**
 
-© June 2026 Rifki Eka Putra
+© June 2026 Rifki Eka Putra (SkyDreamsID)

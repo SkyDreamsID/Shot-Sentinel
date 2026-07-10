@@ -1,0 +1,5 @@
+PROGRAM_NAME = "Shot Sentinel"
+PROGRAM_VERSION = "v0.8 Beta"
+PROGRAM_SLOGAN = "Protect Your Media"
+
+HEADER_TEXT = f"=== {PROGRAM_NAME} {PROGRAM_VERSION} ({PROGRAM_SLOGAN}) ==="

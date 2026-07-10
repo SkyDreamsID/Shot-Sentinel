@@ -1,8 +1,13 @@
-__pychace__/
+__pycache__/
 *.pyc
 
-log/*
-!log/.gitkeep
+# Local config & history files (do not upload personal logs)
+history/master_history.json
+history/process_log.txt
+history/sessions/
+master_history_backup.txt
+QA_Report.md
 
-master_history.txt
-process_log.txt
+# IDE configs
+.vscode/
+.idea/

@@ -1,8 +1,17 @@
 {
+    "language": "id",
     "filename_format": "[{camera}]{date}_{time}_{index}",
+    "filename_preset": "default",
     "use_phone_model": true,
     "unknown_camera_name": "CAM",
     "max_camera_length": 10,
+    "username": "Your Name",
+    "unknown_camera_list": [
+        "CAM",
+        "UNKNOWN",
+        "NOEXIF",
+        "MISC"
+    ],
     "supported_image_extensions": [
         ".jpg",
         ".jpeg",
@@ -35,8 +44,13 @@
         "PENTAX",
         "HASSELBLAD"
     ],
-    "camera_aliases": {
-        "NIKOND3300": "D3300",
-        "NIKOND3100": "D3100"
-    }
+    "source_aliases": {
+        "CAM": "CAM",
+        "SCR": "SCR",
+        "REC": "REC",
+        "DL": "DL",
+        "UNK": "UNK"
+    },
+    "enable_easter_eggs": true,
+    "export_csv": false
 }

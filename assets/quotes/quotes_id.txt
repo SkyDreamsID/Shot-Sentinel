@@ -1,0 +1,100 @@
+Kelihatannya gak peduli. Padahal diam-diam selalu memperhatikan.
+Kalau bisa sederhana... ngapain dibuat ribet.
+Yang bikin tenang bukan keberuntungan. Tapi persiapan.
+Orang lain bilang ribet. Gw bilang... sekali beres.
+Kalau project belum selesai... fokus dulu.
+Backup dulu. Baru berani eksperimen.
+Tool yang bagus gak bikin penggunanya mikir keras.
+Diam bukan berarti gak peduli.
+Banyak ngomong gak bikin kerjaan selesai.
+Lebih baik capek bikin tool daripada capek ngulang kerjaan.
+Basa-basi itu buang waktu. Langsung ke intinya aja.
+Gak usah panik. Semua ada logikanya.
+Kalau sistemnya jalan, jangan disentuh.
+Kadang solusi terbaik itu cuma diam dan observasi.
+Gak perlu pujian. Yang penting kode gw jalan.
+Error itu biasa. Yang aneh itu kalau tiba-tiba jalan tanpa alasan.
+Ngetik kode itu gampang. Baca kode orang... itu penderitaan.
+Gak usah janji manis. Buktikan aja.
+Ngerjain sesuatu dua kali itu bodoh. Makanya diotomatisasi.
+Mending repot mikir di awal, daripada pusing benerin bug di akhir.
+Berisik. Mending dengerin kipas laptop.
+Teman sejati itu yang ngingetin buat nyimpen data.
+Satu backup itu sama dengan gak punya backup.
+File hilang itu bukan musibah. Itu keteledoran.
+Daripada marah-marah, mending cari solusinya.
+Terlalu banyak fitur malah bikin bingung.
+Gak usah dibikin susah. Kalau bisa di-klik, klik aja.
+Estetika itu bonus. Fungsi itu wajib.
+Terlihat jutek? Emang lagi mikir aja.
+Gak semua hal harus didebatkan.
+Punya kamera bagus percuma kalau filenya ilang.
+Niatnya bantuin, eh malah dibilang galak. Ya udahlah.
+Overengineering itu candu. Waspadalah.
+Tidur cukup itu bagian dari produktivitas.
+Mending jujur nyakitin daripada bohong buang waktu.
+Dokumentasi yang bagus itu yang nggak perlu dibaca.
+Daripada nungguin loading, mending ditinggal bikin kopi.
+Bukan pemalas, cuma menghemat energi untuk hal yang penting.
+Hal besar selalu dimulai dari baris kode pertama.
+Ngurusin drama orang itu melelahkan.
+Kalau bisa diselesaikan dalam 5 menit, kerjain sekarang.
+Menghapus kode yang nggak kepakai itu rasanya lega.
+Gak perlu jadi pusat perhatian. Di balik layar lebih tenang.
+Solusi terbaik kadang yang paling membosankan.
+Jangan percaya ingatanmu. Percayalah pada ctrl+s.
+Orang sibuk pamer, kita sibuk rilis.
+Ngapain nunggu motivasi? Mulai aja dulu.
+Kadang, hal yang paling logis adalah istirahat.
+Terlalu banyak mikir bikin gak jalan-jalan.
+Kerja keras boleh, tapi kerja cerdas itu wajib.
+Kalau errornya gak masuk akal, coba restart.
+Gak usah tersinggung, gw cuma ngomong fakta.
+Cuma mau ngerjain apa yang perlu dikerjain.
+Ngerapihin folder itu semacam meditasi.
+Daripada banyak nanya, mending coba dulu.
+Kesalahan terbesar adalah meremehkan hal kecil.
+Gw gak benci orang, cuma benci keramaian.
+Semuanya punya pola. Tinggal lo mau merhatiin atau nggak.
+Menjadi efisien itu bukan pilihan, tapi keharusan.
+Kalau gak rusak, jangan diperbaiki.
+Penamaan variabel yang benar adalah kunci kedamaian batin.
+Gak ada yang namanya kebetulan di dunia programming.
+Kebanyakan gaya, kurang eksekusi.
+Gak perlu banyak teman, yang penting kualitasnya.
+Terkadang, mengabaikan adalah respons terbaik.
+Berharap pada keajaiban itu tidak logis.
+Biasakan baca error log sebelum panik.
+Gw gak jutek, cuma hemat kata-kata.
+Nyesel itu di akhir. Kalau di awal namanya inisialisasi.
+Gak usah maksa. Kalau mentok, tinggalin dulu.
+Semua masalah pasti ada solusinya. Kalau gak ada, berarti itu bukan masalah lo.
+Daripada ngeluh, mending ngoding.
+Cuma karena gw diam, bukan berarti gw setuju.
+Gak ada jalan pintas untuk mahir.
+Jangan buang waktu buat hal yang gak bisa lo kontrol.
+Ngurusin urusan orang lain itu bikin capek.
+Sedikit bicara, banyak aksi.
+Kadang, hal yang paling sulit adalah menyederhanakan.
+Percuma alat canggih kalau penggunanya gaptek.
+Kalau lo ngerasa paling pintar, lo lagi di ruangan yang salah.
+Gw gak peduli pendapat orang, selama kode gw jalan.
+Jangan sampai alat yang ngontrol lo. Lo yang harus ngontrol alat.
+Terkadang, solusi termudah adalah yang paling dihindari orang.
+Ngapain cari gara-gara kalau bisa hidup tenang.
+Gak usah cari pengakuan. Kepuasan pribadi itu cukup.
+Kalau bisa dikerjain bot, ngapain dikerjain manual.
+Mending capek di awal nyiapin script, daripada capek tiap hari klik-klik.
+Diam itu emas. Tapi kode yang jalan itu berlian.
+Gak semua masalah butuh teknologi. Kadang cuma butuh akal sehat.
+Gw cuma mau semuanya rapi. Itu aja.
+Kalau lo gak ngerti cara kerjanya, jangan dipakai buat hal penting.
+Sedikit overthinking di awal bisa nyelametin banyak waktu di akhir.
+Jangan percaya siapa pun, termasuk kode lo sendiri kemaren.
+Hal terbaik dari komputer adalah mereka gak bisa basa-basi.
+Kalau ada jalan yang lebih mudah, kenapa harus pilih yang susah?
+Gw gak males, gw cuma sedang mencari cara paling efisien.
+Kegagalan adalah fitur, bukan bug. Pelajari aja.
+Terkadang, tidak melakukan apa-apa adalah keputusan terbaik.
+Fokus pada apa yang penting, abaikan sisanya.
+Semuanya akan baik-baik saja... kalau lo udah backup.

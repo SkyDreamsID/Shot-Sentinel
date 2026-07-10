@@ -25,14 +25,16 @@ echo.
 
 echo [2/3] Membuat shortcut ke menu Send To...
 
-powershell -NoProfile -Command ^
-"$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('%SHORTCUT%'); ^
-$Shortcut.TargetPath = '%TARGET%'; ^
-$Shortcut.WorkingDirectory = '%~dp0'; ^
-$Shortcut.Description = 'Shot Sentinel'; ^
-$Shortcut.IconLocation = '%SystemRoot%\System32\imageres.dll,15'; ^
-$Shortcut.Save()"
+set "VBS_FILE=%TEMP%\CreateShortcut.vbs"
+echo Set WshShell = CreateObject("WScript.Shell") > "%VBS_FILE%"
+echo Set Shortcut = WshShell.CreateShortcut("%SHORTCUT%") >> "%VBS_FILE%"
+echo Shortcut.TargetPath = "%TARGET%" >> "%VBS_FILE%"
+echo Shortcut.WorkingDirectory = "%~dp0" >> "%VBS_FILE%"
+echo Shortcut.Description = "Shot Sentinel" >> "%VBS_FILE%"
+echo Shortcut.IconLocation = "%SystemRoot%\System32\imageres.dll,15" >> "%VBS_FILE%"
+echo Shortcut.Save >> "%VBS_FILE%"
+cscript //nologo "%VBS_FILE%"
+del "%VBS_FILE%" >nul 2>nul
 
 echo.
 
