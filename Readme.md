@@ -277,14 +277,6 @@ Status:
 - `ACTIVE`
 - `RESTORED`
 
-### 🛣️ Roadmap
-
-**v1.0**
-- Dukungan Linux penuh
-- Pengorganisasian folder otomatis (Folder Organizer)
-- GUI Desktop Version
-- Peningkatan performa lanjutan
-
 ### ❓ Alasan Bikin Ini
 
 Saya pernah kehilangan beberapa foto berharga di HDD saat memindahkan file dari kamera ke laptop. Penomoran nama file kamera suka reset balik ke nol setiap kali ganti kartu memori atau move file (ctrl + v) ke laptop, jadi beberapa foto lama ketimpa tanpa saya sadari. Parah sih, foto-foto bagus jadi ilang begitu aja :v.
@@ -510,14 +502,6 @@ Status:
 
 - `ACTIVE`
 - `RESTORED`
-
-### 🛣️ Roadmap
-
-**v1.0**
-- Full Linux support
-- Automatic folder organization
-- GUI Desktop Version
-- Advanced performance improvements
 
 ### ❓ Why I Made This
 
