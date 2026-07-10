@@ -51,7 +51,7 @@ _PRESET_PATTERNS = {
     # alias_index: ALIAS_00001 — 5 digit index, bukan prefix kamera asli
     "alias_index"    : rf"^{_ALIAS_NEG}{_ALIAS}_{_IDX5}(?=\.)",   # D3300_00001, CAM_00042
     # username_index: USERNAME_00001 — 5 digit index
-    "username_index" : rf"^{_ALIAS_NEG}{_ALIAS}_{_IDX5}(?=\.)",   # RIFKI_00823, TINA_00001
+    "username_index" : rf"^{_ALIAS_NEG}{_ALIAS}_{_IDX5}(?=\.)"
 }
 
 
