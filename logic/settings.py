@@ -1,7 +1,7 @@
 """
 logic/settings.py
 -----------------
-Settings menu untuk Shot Sentinel v0.8.
+Settings menu untuk Shot Sentinel v1.0 Final.
 Berisi fungsi-fungsi untuk mengelola pengaturan yang dapat diubah user
 langsung dari program tanpa edit config/ manual.
 """
@@ -12,7 +12,7 @@ from colorama import Fore, Style
 
 from .metadata import FILENAME_PRESETS, CONFIG_FILE, DEFAULT_CONFIG, load_alias_file, save_alias_file
 from .worker import generate_preset_preview
-from .version import HEADER_TEXT
+from .version import HEADER_TEXT, SEP_LEN
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -634,7 +634,7 @@ def _print_alias_table(aliases: dict, lang: str):
 
     header_line = f"{col_no:<5}{col_brand:<12}{col_model:<22}{col_alias}"
     print(f"{Style.BRIGHT}{header_line}{Style.RESET_ALL}")
-    print("-" * 55)
+    print("-" * SEP_LEN)
 
     for i, (brand, model_key, alias_val) in enumerate(items, start=1):
         row = f"{i:<5}{brand:<12}{model_key:<22}{alias_val}"

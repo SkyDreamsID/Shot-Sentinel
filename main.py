@@ -12,7 +12,12 @@ from logic.log_history import (
     create_session_log,
     find_latest_history_file,
     get_rename_count,
-    log_session_entry
+    log_session_entry,
+    batch_log_renames, 
+    _load_history, 
+    _save_history, 
+    MASTER_HISTORY_JSON,
+    export_session_history
 )
 from logic.worker import (
     already_formatted,
@@ -20,10 +25,9 @@ from logic.worker import (
     execute_rename,
     execute_restore
 )
-from logic.exporter import export_session_history
 from logic.settings import settings_menu
 from logic.additional_features import show_additional_features
-from logic.version import HEADER_TEXT
+from logic.version import PROGRAM_NAME, PROGRAM_VERSION, PROGRAM_SLOGAN, HEADER_TEXT, SEP_LEN
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -91,8 +95,10 @@ STRINGS = {
         "what_to_do"    : "Pengen Ngapain?",
         "opt_rename"    : "[1] Auto Rename (y)",
         "opt_restore"   : "[2] Restore ke nama asli (r)",
-        "opt_settings"  : "[3] Pengaturan (s)",
-        "opt_extra"     : "[4] Fitur Tambahan",
+        "opt_organize"  : "[3] Media Organizer (o)",
+        "opt_duplicate" : "[4] Duplicate Checker (d)",
+        "opt_settings"  : "[5] Pengaturan (s)",
+        "opt_extra"     : "[6] Fitur Tambahan (f)",
         "opt_cancel"    : "[E] Batal (Enter)",
         "prompt"        : "Pilih",
         "preview_label" : "[PREVIEW]",
@@ -107,8 +113,10 @@ STRINGS = {
         "what_to_do"    : "What would you like to do?",
         "opt_rename"    : "[1] Auto Rename (y)",
         "opt_restore"   : "[2] Restore Original Name (r)",
-        "opt_settings"  : "[3] Settings (s)",
-        "opt_extra"     : "[4] Additional Features",
+        "opt_organize"  : "[3] Media Organizer (o)",
+        "opt_duplicate" : "[4] Duplicate Checker (d)",
+        "opt_settings"  : "[5] Settings (s)",
+        "opt_extra"     : "[6] Additional Features (f)",
         "opt_cancel"    : "[E] Cancel (Enter)",
         "prompt"        : "Select",
         "preview_label" : "[PREVIEW]",
@@ -166,8 +174,8 @@ def draw_progress(current, total):
 # Summary helpers — Task 1 & 2
 # ---------------------------------------------------------------------------
 
-_SEP_WIDE = "=" * 60
-_SEP_THIN = "-" * 60
+_SEP_WIDE = "=" * SEP_LEN
+_SEP_THIN = "-" * SEP_LEN
 _COL_W    = 22   # lebar kolom label
 
 def _print_summary_header(title: str):
@@ -278,7 +286,7 @@ def main():
         prog="Shot Sentinel",
         formatter_class=argparse.RawTextHelpFormatter,
         description="""
-v0.8 Beta - Anti-Overwrite media (Cross-platform)
+v1.0 Final - Anti-Overwrite media (Cross-platform)
 -----------------------------------------------------------------------------------
 Utility pencegah file foto/hasil hunting ketimpa atau hilang akibat penamaan bawaan
 kamera yang berulang, seperti (DSC_1234). Otomatis merubah nama foto menjadi dengan
@@ -318,6 +326,7 @@ sehingga aman untuk jangka panjang dan terhindar dari overwrite sistem
     else:
         # --- Main Menu Loop ---
         while True:
+            clear_screen()
             # Reload config setiap iterasi supaya perubahan dari settings langsung berlaku
             from logic.metadata import load_config_file as _lcf
             CONFIG.update(_lcf())
@@ -332,23 +341,34 @@ sehingga aman untuk jangka panjang dan terhindar dari overwrite sistem
             print(f"{T(CONFIG, 'what_to_do')}")
             print(f"{T(CONFIG, 'opt_rename')}")
             print(f"{T(CONFIG, 'opt_restore')}")
+            print(f"{T(CONFIG, 'opt_organize')}")
+            print(f"{T(CONFIG, 'opt_duplicate')}")
             print(f"{T(CONFIG, 'opt_settings')}")
             print(f"{T(CONFIG, 'opt_extra')}")
-            print(f"{Kuning}{T(CONFIG, 'opt_cancel')}{Style.RESET_ALL}")
+            print(f"{Kuning}\n{T(CONFIG, 'opt_cancel')}{Style.RESET_ALL}")
             try:
                 choice = input(f"\n{T(CONFIG, 'prompt')}: ").strip().lower()
             except EOFError:
                 choice = "e"
                 break
 
-            if choice in ("3", "s"):
+            if choice in ("3", "o"):
+                from logic.organizer import run_organizer_flow
+                run_organizer_flow(files, CONFIG)
+                continue
+            elif choice in ("4", "d"):
+                from logic.duplicate_checker import run_duplicate_checker
+                run_duplicate_checker(files, CONFIG)
+                continue
+            elif choice in ("5", "s"):
                 clear_screen()
                 CONFIG.update(settings_menu(CONFIG, preview_file=files[0] if files else None))
                 clear_screen()
                 continue
-            elif choice == "4":
+            elif choice in ("6", "f"):
                 clear_screen()
-                show_additional_features(CONFIG)
+                from logic.additional_features import show_additional_features
+                show_additional_features(CONFIG, files)
                 clear_screen()
                 continue
             else:
@@ -519,6 +539,9 @@ sehingga aman untuk jangka panjang dan terhindar dari overwrite sistem
         except EOFError:
             pass
         sys.exit(0)
+
+    elif choice in ('3', 'o'):
+        pass # Ditangani di dalam loop menu utama
 
     elif choice.lower() == 'e' or choice == '':
         # Batal / Exit

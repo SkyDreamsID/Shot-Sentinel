@@ -1,9 +1,36 @@
 import re
 import datetime
+import os
+import shutil
 from pathlib import Path
-from .metadata import extract_exif, resolve_filename_format, build_detection_regex, FILENAME_PRESETS
-from .source_detector import detect_source, get_source_alias
-from .collision import resolve_collision
+
+def resolve_collision(new_path: Path, existing_set: set[Path] = None) -> Path:
+    """Mengatasi collision dengan menambahkan counter akhiran (suffix counter), misal _001, _002."""
+    if existing_set is None:
+        existing_set = set()
+        
+    if not new_path.exists() and new_path not in existing_set:
+        return new_path
+        
+    base_stem = new_path.stem
+    suffix = new_path.suffix
+    counter = 1
+    
+    while True:
+        candidate_name = f"{base_stem}_{counter:03d}{suffix}"
+        candidate_path = new_path.with_name(candidate_name)
+        if not candidate_path.exists() and candidate_path not in existing_set:
+            return candidate_path
+        counter += 1
+
+from .metadata import (
+    extract_exif, 
+    resolve_filename_format, 
+    build_detection_regex, 
+    FILENAME_PRESETS,
+    detect_source, 
+    get_source_alias
+)
 from .log_history import (
     batch_log_renames,
     log_rename,

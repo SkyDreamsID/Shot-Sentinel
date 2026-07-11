@@ -4,22 +4,22 @@
 
 ---
 
-## Project Philosophy
+## Filosofi Proyek (Ngapain Bikin Ginian?)
 
-Shot Sentinel bukan sekadar aplikasi rename foto. Tujuannya adalah menjadi utilitas CLI ringan, cepat, aman, dan profesional untuk fotografer maupun pengguna umum agar tidak kehilangan file akibat penamaan bawaan kamera yang sering bertabrakan saat dipindahkan ke komputer.
+Shot Sentinel ini bukan sekadar aplikasi *rename* foto biasa. Idenya adalah membuat *tools* CLI yang enteng, cepat, dan aman buat siapa aja (mau fotografer pro atau kasual). Tujuannya simpel: **biar kita gak kehilangan foto berharga** cuma gara-gara nama file bawaan kamera yang suka *reset* dan menimpa file lain pas dipindahin ke laptop.
 
 ---
 
-## Design Decisions: Mengapa Menggunakan "SendTo" Bukan Registry?
+## Kenapa Pakai "SendTo"? Kok Gak Langsung Klik Kanan (Registry)?
 
-Ada alasan teknis dan pengalaman praktis yang melatarbelakangi keputusan untuk tidak mengintegrasikan aplikasi langsung ke *Registry Windows* (Context Menu klik kanan biasa), melainkan lewat folder **SendTo** (`shell:sendto`):
+Sebenarnya ada alasan teknis kenapa saya lebih memilih menempatkan aplikasinya ke dalam folder **SendTo** Windows (`shell:sendto`) daripada pakai *Registry Windows* buat menu klik kanan biasa:
 
-1. **Masalah Multi-Proses pada Registry (Bug Multi-Terminal):**
-   Pada uji coba awal menggunakan Registry, ketika pengguna memilih banyak file sekaligus lalu klik kanan untuk di-rename, Windows akan membuka instansi terminal `main.py` yang baru **untuk setiap file yang dipilih**. Memilih 50 file akan memicu 50 jendela terminal terbuka bersamaan. Mencoba mengutak-atik argumen registry tetap tidak berhasil menyelesaikan masalah ini secara bersih.
-2. **KDE Connect Inspirasi:**
-   Inspirasi menggunakan *Send To* lahir dari cara kerja **KDE Connect** (aplikasi transfer file antar perangkat). Dengan memanfaatkannya, Windows secara otomatis mengelompokkan semua file yang dipilih dan meneruskannya ke satu jendela aplikasi Shot Sentinel yang sama sebagai argumen list, sehingga eksekusi *batch* berjalan stabil di satu jendela.
-3. **Keamanan & Kemudahan:**
-   Metode ini tidak memerlukan hak akses Administrator (UAC), tidak merusak registri sistem, mudah diinstal/diuninstal (hanya berupa *shortcut* `.lnk`), dan sangat portabel.
+1. **Bug Multi-Terminal di Registry:**
+   Dulu pas awal-awal dites pake Registry, saya sempat memilih banyak file sekaligus terus klik kanan buat di-*rename*, Windows malah ngebuka banyak terminal `main.py` barengan (satu terminal buat satu file). Asli, bikin Laptop ngelag. Saya udah ngulik daleman registry macem-macem, tapi tetep aja gak solve dengan bersih.
+2. **Terinspirasi dari KDE Connect:**
+   Ide *Send To* ini terinspirasi dari cara kerja **KDE Connect** saat mentransfer file. Dengan metode ini, Windows otomatis mengelompokkan semua file yang dipilih menjadi satu untuk dikirim ke *satu* terminal aja. Hasilnya? Eksekusi *batch* jalan mulus di satu terminal.
+3. **Lebih Aman & Gampang Diatur:**
+   Pake cara ini tidak perlu akses Administrator (UAC), tidak mengotori *registry* sistem, dan mudah sekali saat di instal atau di uninstall (karena cuma membuat *shortcut* `.lnk` saja). Sangat portabel!
 
 ---
 
@@ -31,9 +31,9 @@ Ada alasan teknis dan pengalaman praktis yang melatarbelakangi keputusan untuk t
 | Author | Rifki Eka Putra (SkyDreamsID) |
 | Language | Python 3 |
 | UI | CLI (Terminal) |
-| Status | Beta Development |
-| Current Version | v0.8 Beta |
-| Target Final | v1.0 |
+| Status | Production Release |
+| Current Version | v1.0 Final |
+| Target Final | v1.0 Final |
 
 ---
 
@@ -41,10 +41,10 @@ Ada alasan teknis dan pengalaman praktis yang melatarbelakangi keputusan untuk t
 
 ```
 v0.7a Foundation        ██████████ 100%
-v0.8 Beta              ██████████ 100%
-v1.0 Final             ░░░░░░░░░░   0%
+v0.8 Beta               ██████████ 100%
+v1.0 Final              ██████████ 100%
 
-Overall Project        ██████░░░░  65%
+Overall Project        ██████████ 100%
 ```
 
 ---
@@ -54,12 +54,10 @@ Overall Project        ██████░░░░  65%
 ```
 v0.7a (Foundation)
      ↓
-v0.8 Beta (Final Feature Release - Current)
-     ↓
-v1.0 Final (Production Release)
-     ↓
-v1.0.1 → v1.0.2 → v1.0.3+
-(Maintenance Only)
+v0.8 Beta (Past Release)
+│
+└──> v1.0 Final (Production Release - Current)
+
 ```
 
 ---
@@ -76,7 +74,7 @@ Versi ini adalah pondasi seluruh proyek. Fokus utama adalah memastikan engine re
 - ✅ Preview Rename
 - ✅ Restore Filename
 - ✅ History
-- ✅ Master History (Versi Teks)
+- ✅ Master History (Versi .txt)
 - ✅ Collision Detection
 - ✅ Progress Bar
 
@@ -95,9 +93,7 @@ Versi ini adalah pondasi seluruh proyek. Fokus utama adalah memastikan engine re
 
 ---
 
-## v0.8 Beta — Final Feature Release (CURRENT)
-
-Versi ini adalah implementasi fitur lengkap yang sudah stabil. Tidak ada lagi perombakan arsitektur besar.
+## v0.8 Beta (Past Release)
 
 ### ARCHITECTURE MODULARITY
 - ✅ **Modular Refactoring**: Memecah berkas tunggal monolith `main.py` dari v0.7a menjadi modul-modul terpisah di dalam direktori `logic/` (`worker.py`, `metadata.py`, `settings.py`, `log_history.py`, `collision.py`, etc.) demi keterbacaan dan pemeliharaan kode jangka panjang.
@@ -190,7 +186,7 @@ config/
 **Header baru:**
 ```
 ============================================================
-=== Shot Sentinel v0.8 Beta (Protect Your Media) ===========
+=== Shot Sentinel v1.0 Final (Protect Your Media) ===========
 ============================================================
 ```
 
@@ -321,9 +317,9 @@ Press Enter to return...
 
 ---
 
-## v1.0 Final — Production Release
+## v1.0 Final — Production Release (CURRENT)
 
-Versi Final. Pengembangan hanya akan difokuskan untuk menyempurnakan fitur-fitur yang sudah ada dan perbaikan bug di v0.8 Beta.
+Versi Final. Seluruh target fitur untuk v1.0 telah diselesaikan.
 
 ### Statistics Dashboard
 - Total Files Renamed
@@ -341,7 +337,14 @@ Versi Final. Pengembangan hanya akan difokuskan untuk menyempurnakan fitur-fitur
 - Statistics
 - Responsive Layout
 
-### File Organizer
+### Standalone Duplicate Checker
+- RAM-efficient Two-Pass Algorithm (Size -> MD5 Hash)
+- Intelligent Original File Detection (Shortest Name + Oldest Creation Time)
+- Safe Isolate to quarantine folder
+- Native Windows Recycle Bin Integration (via ctypes)
+- Captcha protection for Permanent Deletion
+
+### Media Organizer
 - Organize by Year
 - Organize by Month
 - Organize by Camera
@@ -360,6 +363,7 @@ Versi Final. Pengembangan hanya akan difokuskan untuk menyempurnakan fitur-fitur
 - CSV Enhancement
 
 ### Final Polish
+- Dynamic UI Synchronization (Flexible line length based on header)
 - Konsistensi seluruh menu
 - Alignment seluruh output CLI
 - Warna konsisten
@@ -375,7 +379,7 @@ Versi Final. Pengembangan hanya akan difokuskan untuk menyempurnakan fitur-fitur
 
 ---
 
-## Project Structure (v0.8 Beta)
+## Project Structure (v1.0 Final)
 
 ```
 Shot Sentinel/
@@ -391,18 +395,20 @@ Shot Sentinel/
 │
 ├── logic/                    (Core Engine & System)
 │   ├── additional_features.py
-│   ├── collision.py
 │   ├── dev_present.py
-│   ├── exporter.py
+│   ├── html_report.py
+│   ├── integrity.py
 │   ├── log_history.py
 │   ├── metadata.py
+│   ├── organizer.py
 │   ├── settings.py
-│   ├── source_detector.py
+│   ├── statistics.py
 │   ├── version.py
 │   └── worker.py
 │
 ├── assets/                   (Eksternalisasi aset non-logika)
 │   ├── ascii/                (istri dev ada disini :v)
+│   ├── html/                 (Template HTML & CSS)
 │   ├── notes/
 │   └── quotes/
 │
@@ -435,12 +441,12 @@ Shot Sentinel/
 
 ## Setelah v1.0
 
-Tidak ada roadmap fitur mayor. Hanya maintenance.
+Gak ada rencana buat nambahin fitur gede-gedean lagi. Fokusnya murni cuma buat *maintenance* atau nambal *bug* kalau ketemu.
 
 ---
 
 ## Visi Jangka Panjang
 
-Shot Sentinel akan tetap menjadi aplikasi CLI ringan dengan fokus pada satu tugas: mengelola nama file media secara aman dan konsisten. Proyek ini tidak akan berkembang menjadi file manager atau aplikasi GUI penuh. Setiap fitur baru harus tetap sejalan dengan tujuan utama: **sederhana, cepat, hemat sumber daya, dan dapat diandalkan.**
+Shot Sentinel bakal tetep dipertahanin jadi aplikasi CLI yang simpel dan ringan. Fokusnya tetep satu: ngamanin penamaan file foto lu biar gak ketimpa. Proyek ini **gak akan pernah** berubah jadi *file manager* raksasa atau maksa pakai GUI yang berat. Setiap fitur baru yang masuk harus tetep patuh sama prinsip awal: **simpel, ngebut, hemat RAM, dan bisa diandelin.**
 
 

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{program_name} - Global Report</title>
+    <style>
+            {injected_css}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>{program_name}</h1>
+            </div>
+            <div class="meta">
+                Generated: {timestamp}<br>
+                User: {system_user}<br>
+                Version: {program_version}
+            </div>
+        </header>
+
+        <div class="summary-grid">
+            <div class="card">
+                <div class="card-title">Total Files Protected</div>
+                <div class="card-value">{total_rename}</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Total Restored</div>
+                <div class="card-value">{total_restore}</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Most Used Camera</div>
+                <div class="card-value" style="font-size: 20px; line-height: 33px;">{most_used_camera}</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Largest Session</div>
+                <div class="card-value" style="font-size: 20px; line-height: 33px;">{largest_session_date} <span style="font-size: 14px; color: var(--text-muted)">({largest_session_count} files)</span></div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Protection Rank</h2>
+        <div class="rank-container">
+            <div class="rank-header">
+                <div>
+                    <div class="card-title">Current Rank</div>
+                    <h3 class="rank-name">{rank_name}</h3>
+                </div>
+                <div class="rank-details">
+                    <div>Next Rank: <strong>{next_rank}</strong></div>
+                    <div>Remaining to next rank: {rank_remaining} files</div>
+                </div>
+            </div>
+            <div class="progress-wrapper">
+                <div class="progress-fill" style="width: {rank_pct}%;"></div>
+            </div>
+            <div class="progress-stats">
+                <span>0</span>
+                <span>{rank_pct}%</span>
+                <span>{rank_target}</span>
+            </div>
+        </div>
+
+        <h2 class="section-title">Statistics</h2>
+        <div class="dist-grid">
+            <div class="chart-box">
+                <div class="card-title" style="margin-bottom: 20px;">Camera Usage</div>
+                {camera_bars}
+            </div>
+            <div class="chart-box">
+                <div class="card-title" style="margin-bottom: 20px;">File Type Distribution</div>
+                {ext_bars}
+            </div>
+        </div>
+
+        <h2 class="section-title">Recent Activity (Latest 100)</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th title="Click to sort">Date & Time</th>
+                        <th title="Click to sort">Camera</th>
+                        <th title="Click to sort">Before & After</th>
+                        <th title="Click to sort">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {table_rows}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+{injected_js}
+    </script>
+</body>
+</html>

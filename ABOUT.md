@@ -1,6 +1,6 @@
 # About Shot Sentinel
 
-**Version:** v0.8 Beta
+**Version:** v1.0 Final
 **Developer:** Rifki Eka Putra (SkyDreamsID)
 **License:** Non-Commercial License
 

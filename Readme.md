@@ -5,8 +5,8 @@
 
 > Never lose your memories because your camera decided to start from DSC_0001 again.
 
-![Version](https://img.shields.io/badge/version-v0.8--beta-orange)
-![Platform](https://img.shields.io/badge/platform-Windows-blue)
+![Version](https://img.shields.io/badge/version-v1.0--Final-success)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-blue)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-green)
 ![License](https://img.shields.io/badge/license-Non--Commercial-red)
 
@@ -36,6 +36,7 @@ On the first launch, Shot Sentinel will automatically install the required depen
 
 ## Cara Pakai | How to use
 
+### Windows
 | Bahasa Indonesia | English |
 |---|---|
 | **1. Extract file Zip yang telah didownload** | **1. Extract the downloaded Zip file** |
@@ -46,12 +47,23 @@ On the first launch, Shot Sentinel will automatically install the required depen
 | **6. Pilih fitur menggunakan keyboard** | **6. Select feature using keyboard input** |
 | **7. Program berhasil dijalankan** | **7. Program successfully executed** |
 
-## 🗑️ Uninstall
-
+### Linux (Mint / Ubuntu / Debian)
 | Bahasa Indonesia | English |
 |---|---|
-| **1. Jalankan Uninstall-Program.bat** | **1. Run Uninstall-Program.bat** |
-| **2. Selesai** | **2. Done** |
+| **1. Extract file Zip yang telah didownload** | **1. Extract the downloaded Zip file** |
+| **2. Buka terminal di folder Shot Sentinel** | **2. Open a terminal in the Shot Sentinel folder** |
+| **3. Jalankan `bash Install-Program.sh`** | **3. Run `bash Install-Program.sh`** |
+| **4. Pilih file yang ingin Anda proses di file manager** | **4. Select the files you want to process in the file manager** |
+| **5. Klik kanan → Scripts (Skrip) → Shot Sentinel** | **5. Right-click → Scripts → Shot Sentinel** |
+| **6. Pilih fitur menggunakan keyboard di terminal yang muncul** | **6. Select feature using keyboard in the spawned terminal** |
+
+## 🗑️ Uninstall
+
+### Windows
+- Jalankan **Uninstall-Program.bat**
+
+### Linux
+- Jalankan **bash Uninstall-Program.sh** di terminal
 
 <details>
 <summary><h3>📷 Visual Guide (Screenshot Step by Step)</h3></summary>
@@ -108,8 +120,13 @@ Shot Sentinel dibuat untuk mengatasi masalah tersebut dengan merubah nama file m
 
 - 📸 Rename otomatis berdasarkan EXIF
 - 🎥 Mendukung foto dan video
-- 🛡️ Mencegah file tertimpa (overwrite) & Cek duplikat otomatis
+- 🛡️ Mencegah file tertimpa (overwrite)
+- 👯 Standalone Duplicate Checker (Cari & atur file duplikat dengan aman)
 - 🔄 Restore ke nama file asli
+- 🗃️ Media Organizer (Pindahkan & susun file secara aman & idempoten)
+- 📊 HTML Report Generation (Laporan interaktif aktivitas file)
+- 🥇 Protection Rank (Gamifikasi perlindungan file Anda)
+- 🔍 Integrity Check (Verifikasi sinkronisasi master history)
 - 🏷️ Camera Alias (Ubah nama model kamera bawaan)
 - 👤 Username Alias (Gunakan nama Anda untuk nama file)
 - ❓ Unknown Camera Alias (Tangani metadata yang hilang)
@@ -167,6 +184,10 @@ Shot-Sentinel/
 │   └── process_log.txt
 ├── logic/
 ├── assets/
+│   └── html/
+│       ├── report.css
+│       ├── report.html
+│       └── report.js
 ├── Sample/
 ├── Step by step/
 ├── [ID] PENTING!!.txt
@@ -279,9 +300,9 @@ Status:
 
 ### ❓ Alasan Bikin Ini
 
-Saya pernah kehilangan beberapa foto berharga di HDD saat memindahkan file dari kamera ke laptop. Penomoran nama file kamera suka reset balik ke nol setiap kali ganti kartu memori atau move file (ctrl + v) ke laptop, jadi beberapa foto lama ketimpa tanpa saya sadari. Parah sih, foto-foto bagus jadi ilang begitu aja :v.
+Saya pernah kehilangan beberapa foto berharga di HDD waktu mindahin file dari kamera ke laptop. Penomoran nama file kamera itu emang suka *reset* balik ke nol tiap kali ganti kartu memori atau pindahin file (ctrl + v) ke laptop, jadi tanpa sadar beberapa foto lama ketimpa sama file baru yang namanya kebetulan sama. Parah sih, foto-foto bagus jadi ilang begitu aja :v.
 
-Setelah beberapa kali kena masalah yang sama, akhirnya muak juga. Jadinya cari cara buat solve problem ini sendiri. Dari frustasi jadi tools yang hopefully bisa bantu orang lain yang punya masalah serupa. (tools ini useless jika anda tidak menaruh semua foto di satu folder)
+Setelah beberapa kali kena masalah yang sama, akhirnya muak juga. Jadinya cari cara buat *solve* problem ini sendiri. Dari rasa frustasi (karena teledor sih :v), jadilah *tools* yang *hopefully* bisa bantu orang lain yang punya masalah serupa. (Fyi, *tools* ini bakal *useless* kalau kalian gak suka numpukin semua foto campur aduk di satu folder)
 
 kayak gini casenya
 ```text
@@ -334,8 +355,13 @@ Shot Sentinel was built to solve this by renaming files into unique filenames ba
 
 - 📸 Automatic renaming based on EXIF data
 - 🎥 Supports both photos and videos
-- 🛡️ Prevents file overwrites & Automatic duplicate checking
+- 🛡️ Prevents file overwrites
+- 👯 Standalone Duplicate Checker (Detect & manage duplicate files safely)
 - 🔄 Restore to original filename
+- 🗃️ Media Organizer (Safely move & organize files with idempotency)
+- 📊 HTML Report Generation (Interactive file activity reports)
+- 🥇 Protection Rank (Gamification of your file protection)
+- 🔍 Integrity Check (Verify master history synchronization)
 - 🏷️ Camera Alias (Change default camera model names)
 - 👤 Username Alias (Use your name for filenames)
 - ❓ Unknown Camera Alias (Handle missing metadata)
@@ -393,6 +419,10 @@ Shot-Sentinel/
 │   └── process_log.txt
 ├── logic/
 ├── assets/
+│   └── html/
+│       ├── report.css
+│       ├── report.html
+│       └── report.js
 ├── Sample/
 ├── Step by step/
 ├── [ID] PENTING!!.txt
