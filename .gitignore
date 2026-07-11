@@ -11,3 +11,6 @@ QA_Report.md
 # IDE configs
 .vscode/
 .idea/
+
+# Testing folders
+Testing/
