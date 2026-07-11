@@ -14,7 +14,7 @@
 
 ### Requirements
 
-- Windows 10/11 atau Linux (Ubuntu, Mint, Debian, dll)
+- Windows 10/11 or Linux (Ubuntu, Debian, Mint)
 - Python 3.10 or newer (with pip)
 - Internet connection (first run only)
 
