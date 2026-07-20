@@ -1,5 +1,20 @@
 #!/usr/bin/env bash
 
+# Jika dijalankan tanpa terminal (misal double-click dari file manager), buka terminal baru
+if [ ! -t 1 ]; then
+    SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
+    for term in x-terminal-emulator gnome-terminal mate-terminal xfce4-terminal konsole alacritty kitty xterm; do
+        if command -v "$term" >/dev/null 2>&1; then
+            if [ "$term" = "gnome-terminal" ] || [ "$term" = "mate-terminal" ]; then
+                exec "$term" -- bash "$SCRIPT_PATH" "$@"
+            else
+                exec "$term" -e bash "$SCRIPT_PATH" "$@"
+            fi
+            exit 0
+        fi
+    done
+fi
+
 echo "====================================================="
 echo "             Shot Sentinel Linux Uninstaller"
 echo "====================================================="
