@@ -594,6 +594,23 @@ _RESET_DEFAULTS = {
     "max_camera_length"   : 10,
     "username"            : "Your Name",
     "unknown_camera_list" : ["CAM", "UNKNOWN", "NOEXIF", "MISC"],
+    "supported_image_extensions": [
+        ".jpg",".jpeg",".png",".nef",".cr2",".cr3",".arw",".raf",".orf",".rw2",".dng",
+    ],
+    "supported_video_extensions": [
+        ".mp4",".mov",".avi",".mts",".m2ts",".mxf",
+    ],
+    "brand_keywords": [
+        "NIKON","SONY","CANON","OLYMPUS","FUJIFILM","PANASONIC","LEICA","PENTAX","HASSELBLAD",
+    ],
+    "source_aliases": {
+        "CAM": "CAM",
+        "SCR": "SCR",
+        "REC": "REC",
+        "DL" : "DL",
+        "UNK": "UNK"
+    },
+    "enable_easter_eggs": True
 }
 
 def reset_config(config: dict, lang: str) -> dict:
