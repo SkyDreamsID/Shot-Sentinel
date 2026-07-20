@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# Tentukan direktori script berada
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# Tentukan direktori script berada (mendukung symlink)
+SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
+SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
 
 # Mengambil file yang terpilih dari Nemo / Nautilus
 SELECTED_FILES=()
@@ -21,13 +22,13 @@ else
 fi
 
 # Jika dijalankan dari file manager (tidak ada terminal TTY), buka terminal baru
-if [ ! -t 0 ]; then
+if [ ! -t 1 ]; then
     for term in x-terminal-emulator gnome-terminal mate-terminal xfce4-terminal konsole alacritty kitty xterm; do
         if command -v "$term" >/dev/null 2>&1; then
             if [ "$term" = "gnome-terminal" ] || [ "$term" = "mate-terminal" ]; then
-                exec "$term" -- bash "$0" "${SELECTED_FILES[@]}"
+                exec "$term" -- bash "$SCRIPT_PATH" "${SELECTED_FILES[@]}"
             else
-                exec "$term" -e bash "$0" "${SELECTED_FILES[@]}"
+                exec "$term" -e bash "$SCRIPT_PATH" "${SELECTED_FILES[@]}"
             fi
             exit 0
         fi
